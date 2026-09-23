@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# Intentionally do not inspect, transform, log, or persist any argument.
+# The absolute path prevents PATH recursion back into this shim.
+exec /usr/bin/sudo "$@"

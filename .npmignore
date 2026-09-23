@@ -1,0 +1,3 @@
+tests/
+.github/
+tsconfig*.json

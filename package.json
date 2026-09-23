@@ -1,0 +1,54 @@
+{
+  "name": "opencode-macos-sudo",
+  "version": "0.1.0",
+  "description": "Transparent, on-demand macOS sudo elevation for OpenCode V2 using native PAM and Touch ID.",
+  "type": "module",
+  "exports": {
+    ".": "./index.ts"
+  },
+  "bin": {
+    "opencode-macos-sudo": "./bin/opencode-macos-sudo.mjs"
+  },
+  "files": [
+    "index.ts",
+    "bin",
+    "docs",
+    "dist/src",
+    "src",
+    "LICENSE",
+    "README.md",
+    "SECURITY.md"
+  ],
+  "scripts": {
+    "compile": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "npm run compile && tsc -p tsconfig.test.json && node --test .test-dist/tests/*.test.js",
+    "check": "npm run typecheck && npm test",
+    "doctor": "npm run compile --silent && node ./bin/opencode-macos-sudo.mjs doctor"
+  },
+  "keywords": [
+    "opencode",
+    "opencode-plugin",
+    "macos",
+    "sudo",
+    "touch-id",
+    "pam"
+  ],
+  "license": "MIT",
+  "author": "yoktur",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yoktur/opencode-macos-sudo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yoktur/opencode-macos-sudo/issues"
+  },
+  "homepage": "https://github.com/yoktur/opencode-macos-sudo#readme",
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.0",
+    "typescript": "^5.9.2"
+  }
+}
